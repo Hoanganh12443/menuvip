@@ -1,0 +1,442 @@
+```html
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>N.Q.K.D MOD STORE</title>
+
+<style>
+
+:root{
+--main:#00ff88;
+--android:#3ddc84;
+--bg:#05070a;
+--card:#12161d;
+}
+
+body{
+font-family:Segoe UI,Arial;
+background:var(--bg);
+color:white;
+margin:0;
+padding:20px;
+text-align:center;
+}
+
+.logo{
+font-size:32px;
+font-weight:900;
+margin-bottom:20px;
+background:linear-gradient(90deg,#ff0055,#00ff88,#a020f0);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.tabs{
+margin-bottom:25px;
+}
+
+.tab{
+padding:10px 20px;
+margin:5px;
+border:none;
+border-radius:10px;
+cursor:pointer;
+font-weight:bold;
+font-size:15px;
+}
+
+.ios-btn{background:#00ff88;}
+.android-btn{background:#3ddc84;}
+
+.container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+max-width:1000px;
+margin:auto;
+}
+
+.card{
+background:var(--card);
+border-radius:18px;
+padding:25px;
+border:2px solid #222;
+transition:.4s;
+}
+
+.card:hover{
+transform:scale(1.04);
+box-shadow:0 0 25px #00ff88;
+}
+
+.title{
+font-size:18px;
+font-weight:bold;
+margin-bottom:8px;
+}
+
+.price{
+font-size:26px;
+margin:15px 0;
+color:#00ff88;
+}
+
+.features{
+list-style:none;
+padding:0;
+text-align:left;
+margin:15px 0;
+}
+
+.features li{
+padding:6px 0;
+border-bottom:1px solid #222;
+font-size:14px;
+}
+
+.features li::before{
+content:"⚡ ";
+}
+
+.btn{
+width:100%;
+padding:12px;
+border:none;
+border-radius:10px;
+font-weight:bold;
+cursor:pointer;
+background:#00ff88;
+font-size:15px;
+}
+
+.hidden{
+display:none;
+}
+
+/* MODAL PAYMENT */
+
+.modal{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.9);
+justify-content:center;
+align-items:center;
+padding:10px;
+overflow:auto;
+}
+
+.modal-content{
+background:white;
+color:black;
+padding:15px;
+border-radius:15px;
+width:100%;
+max-width:300px;
+max-height:90vh;
+overflow:auto;
+}
+
+.qr{
+width:220px;
+max-width:90%;
+}
+
+.copy{
+margin-top:6px;
+padding:9px;
+width:100%;
+background:#0066ff;
+color:white;
+border:none;
+border-radius:8px;
+cursor:pointer;
+}
+
+.close{
+background:red;
+margin-top:8px;
+padding:9px;
+width:100%;
+border:none;
+color:white;
+border-radius:10px;
+cursor:pointer;
+}
+
+.note{
+font-size:12px;
+margin-top:6px;
+}
+
+.zalo{
+position:fixed;
+bottom:20px;
+right:20px;
+width:60px;
+height:60px;
+background:#0068ff;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+box-shadow:0 0 15px rgba(0,0,0,.4);
+animation:float 2s infinite;
+z-index:999;
+}
+
+.zalo img{
+width:34px;
+}
+
+@keyframes float{
+0%{transform:translateY(0)}
+50%{transform:translateY(-6px)}
+100%{transform:translateY(0)}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="logo">N.Q.K.D MOD STORE</div>
+
+<div class="tabs">
+<button class="tab ios-btn" onclick="showTab('ios')">🍎 IOS MOD</button>
+<button class="tab android-btn" onclick="showTab('android')">🤖 ANDROID MOD</button>
+</div>
+
+<!-- IOS -->
+
+<div id="ios" class="container">
+
+<div class="card">
+<div class="title">AIMLOCK V2</div>
+<div class="price">200K</div>
+<ul class="features">
+<li>Khóa tâm 85%</li>
+<li>Antiban cơ bản</li>
+<li>Hỗ trợ iOS</li>
+</ul>
+<button class="btn" onclick="buy('AIMLOCKV2',200000)">MUA NGAY</button>
+</div>
+
+<div class="card">
+<div class="title">AIMLOCK V3</div>
+<div class="price">300K</div>
+<ul class="features">
+<li>Khóa tâm 90%</li>
+<li>Bypass Anticheat</li>
+<li>Bảo hành OB</li>
+</ul>
+<button class="btn" onclick="buy('AIMLOCKV3',300000)">MUA NGAY</button>
+</div>
+
+<div class="card">
+<div class="title">AIMLOCK V4</div>
+<div class="price">400K</div>
+<ul class="features">
+<li>Khóa tâm 95%</li>
+<li>Antiban nâng cấp</li>
+<li>Đa thiết bị</li>
+</ul>
+<button class="btn" onclick="buy('AIMLOCKV4',400000)">MUA NGAY</button>
+</div>
+
+<div class="card">
+<div class="title">AIMLOCK V5</div>
+<div class="price">500K</div>
+<ul class="features">
+<li>Khóa tâm 100%</li>
+<li>Silent Aim</li>
+<li>Antiban v5</li>
+</ul>
+<button class="btn" onclick="buy('AIMLOCKV5',500000)">MUA NGAY</button>
+</div>
+
+<div class="card">
+<div class="title">DPI</div>
+<div class="price">100K</div>
+<ul class="features">
+<li>Tăng nhạy tâm</li>
+<li>iOS hỗ trợ</li>
+<li>Dễ sử dụng</li>
+</ul>
+<button class="btn" onclick="buy('DPI',100000)">MUA NGAY</button>
+</div>
+
+<div class="card">
+<div class="title">AIMNECK</div>
+<div class="price">200K</div>
+<ul class="features">
+<li>Ghim cổ</li>
+<li>Ổn định tâm</li>
+<li>iOS hỗ trợ</li>
+</ul>
+<button class="btn" onclick="buy('AIMNECK',200000)">MUA NGAY</button>
+</div>
+
+<div class="card">
+<div class="title">DPI TEST</div>
+<div class="price">50K</div>
+<ul class="features">
+<li>Bản test</li>
+<li>DPI thử</li>
+<li>iOS hỗ trợ</li>
+</ul>
+<button class="btn" onclick="buy('DPITEST',50000)">MUA NGAY</button>
+</div>
+
+<div class="card">
+<div class="title">MOD SKIN</div>
+<div class="price">200K</div>
+<ul class="features">
+<li>Mở skin</li>
+<li>Hiệu ứng đẹp</li>
+<li>iOS hỗ trợ</li>
+</ul>
+<button class="btn" onclick="buy('MODSKIN',200000)">MUA NGAY</button>
+</div>
+
+<div class="card">
+<div class="title">DPI VIP</div>
+<div class="price">400K</div>
+<ul class="features">
+<li>DPI cao cấp</li>
+<li>Khóa tâm tốt</li>
+<li>iOS hỗ trợ</li>
+</ul>
+<button class="btn" onclick="buy('DPIVIP',400000)">MUA NGAY</button>
+</div>
+
+</div>
+
+<!-- ANDROID -->
+
+<div id="android" class="container hidden">
+
+<div class="card">
+<div class="title">DRG + HOLO</div>
+<div class="price">200K</div>
+<ul class="features">
+<li>Khóa tâm 80%</li>
+<li>Antiban cơ bản</li>
+<li>Android</li>
+</ul>
+<button class="btn" onclick="buy('ANDROIDV2',200000)">MUA NGAY</button>
+</div>
+
+<div class="card">
+<div class="title">DRG + HOLO VIP</div>
+<div class="price">300K</div>
+<ul class="features">
+<li>Khóa tâm 85%</li>
+<li>Bypass Anticheat</li>
+<li>Mọi Android</li>
+</ul>
+<button class="btn" onclick="buy('ANDROIDV3',300000)">MUA NGAY</button>
+</div>
+
+<div class="card">
+<div class="title">ĐỊNH VỊ + ANTENNA</div>
+<div class="price">400K</div>
+<ul class="features">
+<li>Khóa tâm 90%</li>
+<li>Định vị kẻ địch</li>
+<li>Antiban NQKD</li>
+</ul>
+<button class="btn" onclick="buy('ANDROIDV4',400000)">MUA NGAY</button>
+</div>
+
+<div class="card">
+<div class="title">SUPER AIM</div>
+<div class="price">500K</div>
+<ul class="features">
+<li>Khóa tâm 100%</li>
+<li>Antiban v5</li>
+<li>Android mới</li>
+</ul>
+<button class="btn" onclick="buy('ANDROIDV5',500000)">MUA NGAY</button>
+</div>
+
+</div>
+
+<!-- PAYMENT -->
+
+<div id="modal" class="modal">
+<div class="modal-content">
+
+<img id="qr" class="qr">
+
+<p><b>NGUYEN QUOC KHANH DUY</b></p>
+<p>STK: <b>888825933666</b></p>
+
+<button class="copy" onclick="copySTK()">Copy STK</button>
+
+<p id="content"></p>
+
+<button class="copy" onclick="copyContent()">Copy nội dung</button>
+
+<p class="note">⚠️ Chụp bill gửi admin</p>
+
+<a href="https://zalo.me/0328481909">Liên hệ Zalo</a>
+
+<button class="close" onclick="closeModal()">Đóng</button>
+
+</div>
+</div>
+
+<a href="https://zalo.me/0328481909" class="zalo">
+<img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg">
+</a>
+
+<script>
+
+let transfer=""
+
+function showTab(tab){
+document.getElementById("ios").classList.add("hidden")
+document.getElementById("android").classList.add("hidden")
+document.getElementById(tab).classList.remove("hidden")
+}
+
+function buy(name,amount){
+
+transfer="DONE "+name
+
+let qr="https://img.vietqr.io/image/vietinbank-888825933666-compact2.png?amount="+amount+"&addInfo="+encodeURIComponent(transfer)
+
+document.getElementById("qr").src=qr
+
+document.getElementById("content").innerHTML="Nội dung chuyển khoản:<br><b>"+transfer+"</b>"
+
+document.getElementById("modal").style.display="flex"
+}
+
+function closeModal(){
+document.getElementById("modal").style.display="none"
+}
+
+function copySTK(){
+navigator.clipboard.writeText("888825933666")
+alert("Đã copy STK")
+}
+
+function copyContent(){
+navigator.clipboard.writeText(transfer)
+alert("Đã copy nội dung")
+}
+
+</script>
+
+</body>
+</html>
+```
